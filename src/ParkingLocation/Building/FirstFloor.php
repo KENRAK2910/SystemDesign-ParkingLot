@@ -10,7 +10,7 @@ class FirstFloor extends BuildingParking
     {
         return $this->PARKING_CAPACITY;
     }
-    
+
     public function getDescription()
     {
         return $this->description;
@@ -22,7 +22,7 @@ class FirstFloor extends BuildingParking
 
         return $this;
     }
-    
+
     public function dissociateParkingSpace()
     {
         $this->PARKING_CAPACITY++;

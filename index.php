@@ -7,16 +7,20 @@ use Parkinglot\System\ParkingSystem;
 use Parkinglot\Exceptions\ParkingCapacityReachedException;
 
 $vehicle = new Car('MH 04 7755', 4, 'Honda', 'Accord MT');
-$buildingParking = new ParkingSystem('building');
+
+try {
+    $buildingParking = new ParkingSystem('ground-parking');
+} catch (InvalidParkingLocationException $ex){
+    echo $ex->getMessage()."\n";
+    return;
+}
+
 
 try {
     $parkingTicket = $buildingParking->assignParking($vehicle, new DateTime('now'));
 } catch (ParkingCapacityReachedException $ex) {
     echo $ex->getMessage();
-    die;
-} catch (InvalidParkingLocationException $ex){
-    echo $ex->getMessage();
-    die;
+    return;
 }
 
-var_dump($parkingTicket);
+print_r($parkingTicket);

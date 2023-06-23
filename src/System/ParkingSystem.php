@@ -3,11 +3,11 @@ namespace Parkinglot\System;
 
 use DateTime;
 use Parkinglot\Vehicle\Vehicle;
-use Parkinglot\ParkingTickets\ParkingTicket;
 use Parkinglot\ParkingLocation\Parkable;
+use Parkinglot\ParkingTickets\ParkingTicket;
 use Parkinglot\ParkingTickets\Types\PaperTicket;
+use Parkinglot\ParkingLocation\Ground\GroundParking;
 use Parkinglot\ParkingTickets\ParkingTicketInterface;
-use Parkinglot\ParkingLocation\Building\GroundParking;
 use Parkinglot\ParkingLocation\Building\BuildingParking;
 use Parkinglot\Exceptions\InvalidParkingLocationException;
 
@@ -50,7 +50,7 @@ class ParkingSystem
                 $this->parkingLocation = new GroundParking();
                 break;
             default:
-                throw new InvalidParkingLocationException('Invalid parking location.');
+                throw new InvalidParkingLocationException("Invalid parking location: {$parkingLocationType}");
                 break;
         }
     }

@@ -1,7 +1,7 @@
 <?php
 namespace Parkinglot\ParkingLocation\Building;
 
-class SecondFloor
+class SecondFloor extends BuildingParking
 {
     private $description = 'Second Floor Parking';
     private $PARKING_CAPACITY = 0;
@@ -10,7 +10,7 @@ class SecondFloor
     {
         return $this->PARKING_CAPACITY;
     }
-    
+
     public function getDescription()
     {
         return $this->description;
@@ -22,7 +22,7 @@ class SecondFloor
 
         return $this;
     }
-    
+
     public function dissociateParkingSpace()
     {
         $this->PARKING_CAPACITY++;

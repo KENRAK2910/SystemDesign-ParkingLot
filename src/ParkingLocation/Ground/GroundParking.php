@@ -1,10 +1,9 @@
 <?php
-namespace Parkinglot\ParkingLocation\Building;
+namespace Parkinglot\ParkingLocation\Ground;
 
 use Parkinglot\ParkingLocation\Parkable;
 use Parkinglot\Exceptions\ParkingCapacityReachedException;
 
-// Facade
 class GroundParking implements Parkable
 {
 

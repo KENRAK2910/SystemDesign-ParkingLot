@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace Parkinglot\ParkingTickets\Types;
 
 use DateTime;
@@ -26,7 +26,7 @@ class PaperTicket extends ParkingTicket
         $hourlyParkingFee = ParkingPrices::getHourlyParkingFee( $this->vehicle->getVehicleType() );
 
         // $this->parkingFee = round($differenceTime->h * $hourlyParkingFee);
-        $this->parkingFee = number_format(rand(1, 10) * $hourlyParkingFee, 2);
+        $this->parkingFee = (rand(1, 10) * $hourlyParkingFee);
 
         return $this->applyDiscount();
     }
